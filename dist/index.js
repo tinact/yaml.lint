@@ -987,7 +987,7 @@ const installYamllint = () => {
     exec.exec(`pip3 install --upgrade setuptools yamllint`);
 };
 const runYamllint = () => {
-    exec.exec(`yamllint .`);
+    exec.exec(`/opt/hostedtoolcache/Python/3.8.2/x64/bin/yamllint .`);
 };
 run();
 
