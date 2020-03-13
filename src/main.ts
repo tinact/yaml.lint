@@ -6,8 +6,6 @@ async function run(): Promise<void> {
     installYamllint()
 
     runYamllint()
-      .then()
-      .catch(err => core.setFailed(err.message))
   } catch (error) {
     core.setFailed(error.message)
   }
@@ -17,8 +15,8 @@ const installYamllint = (): void => {
   exec.exec(`pip3 install --upgrade setuptools yamllint`)
 }
 
-const runYamllint = async (): Promise<void> => {
-  await exec.exec(`yamllint .`)
+const runYamllint = (): void => {
+  exec.exec(`yamllint .`)
 }
 
 run()

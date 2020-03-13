@@ -976,9 +976,7 @@ function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             installYamllint();
-            runYamllint()
-                .then()
-                .catch(err => core.setFailed(err.message));
+            runYamllint();
         }
         catch (error) {
             core.setFailed(error.message);
@@ -988,9 +986,9 @@ function run() {
 const installYamllint = () => {
     exec.exec(`pip3 install --upgrade setuptools yamllint`);
 };
-const runYamllint = () => __awaiter(void 0, void 0, void 0, function* () {
-    yield exec.exec(`yamllint .`);
-});
+const runYamllint = () => {
+    exec.exec(`yamllint .`);
+};
 run();
 
 
