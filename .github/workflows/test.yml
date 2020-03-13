@@ -1,0 +1,16 @@
+---
+name: Testing Action
+
+on: [pull_request]
+
+jobs:
+  test_action:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Testing action
+        uses: ./
+        with:
+          config_path: tests/.yamllint.yml

@@ -1,0 +1,14 @@
+---
+name: 'YAML Lint'
+description: 'This action will lint YAML files.'
+author: 'Simon Baerlocher <s.baerlocher@sbaerlocher.ch>'
+inputs:
+  config_path:
+    description: "Use a custom lint configuration."
+    required: false
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+branding:
+  color: blue
+  icon: check-square'
