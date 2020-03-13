@@ -21,7 +21,7 @@ async function run(): Promise<void> {
 }
 
 const installYamllint = async (): Promise<void> => {
-  await exec.exec(`pip3 install setuptools yamllint`)
+  await exec.exec(`sudo pip3 install --upgrade setuptools yamllint`)
 }
 
 const runYamllint = async (yamlCommand: string): Promise<void> => {

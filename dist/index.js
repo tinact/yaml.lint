@@ -991,7 +991,7 @@ function run() {
     });
 }
 const installYamllint = () => __awaiter(void 0, void 0, void 0, function* () {
-    yield exec.exec(`pip3 install setuptools yamllint`);
+    yield exec.exec(`sudo pip3 install --upgrade setuptools yamllint`);
 });
 const runYamllint = (yamlCommand) => __awaiter(void 0, void 0, void 0, function* () {
     yield exec.exec(`yamllint ${yamlCommand}`);
