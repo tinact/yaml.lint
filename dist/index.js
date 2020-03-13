@@ -975,13 +975,8 @@ const exec = __importStar(__webpack_require__(986));
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const configPath = core.getInput('config_path');
-            let yamlCommand = '.';
             installYamllint();
-            if (configPath) {
-                yamlCommand += ` -c ${configPath}`;
-            }
-            runYamllint(yamlCommand)
+            runYamllint()
                 .then()
                 .catch(err => core.setFailed(err.message));
         }
@@ -993,8 +988,8 @@ function run() {
 const installYamllint = () => __awaiter(void 0, void 0, void 0, function* () {
     yield exec.exec(`pip3 install --upgrade setuptools yamllint`);
 });
-const runYamllint = (yamlCommand) => __awaiter(void 0, void 0, void 0, function* () {
-    yield exec.exec(`yamllint ${yamlCommand}`);
+const runYamllint = () => __awaiter(void 0, void 0, void 0, function* () {
+    yield exec.exec(`yamllint .`);
 });
 run();
 
