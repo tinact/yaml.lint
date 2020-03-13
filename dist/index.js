@@ -985,11 +985,11 @@ function run() {
         }
     });
 }
-const installYamllint = () => __awaiter(void 0, void 0, void 0, function* () {
-    yield exec.exec(`pip3 install --upgrade setuptools yamllint`);
-});
+const installYamllint = () => {
+    exec.exec(`pip3 install --upgrade setuptools yamllint`);
+};
 const runYamllint = () => __awaiter(void 0, void 0, void 0, function* () {
-    yield exec.exec(`/opt/hostedtoolcache/Python/3.8.2/x64/bin/yamllint .`);
+    yield exec.exec(`yamllint .`);
 });
 run();
 
