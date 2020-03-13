@@ -975,7 +975,6 @@ const exec = __importStar(__webpack_require__(986));
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            installYamllint();
             runYamllint();
         }
         catch (error) {
@@ -983,11 +982,8 @@ function run() {
         }
     });
 }
-const installYamllint = () => {
-    exec.exec(`pip3 install --upgrade setuptools yamllint`);
-};
 const runYamllint = () => {
-    exec.exec(`/opt/hostedtoolcache/Python/3.8.2/x64/bin/yamllint .`);
+    exec.exec(`yamllint .`);
 };
 run();
 
