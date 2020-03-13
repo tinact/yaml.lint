@@ -989,7 +989,7 @@ const installYamllint = () => __awaiter(void 0, void 0, void 0, function* () {
     yield exec.exec(`pip3 install --upgrade setuptools yamllint`);
 });
 const runYamllint = () => __awaiter(void 0, void 0, void 0, function* () {
-    yield exec.exec(`yamllint .`);
+    yield exec.exec(`/opt/hostedtoolcache/Python/3.8.2/x64/bin/yamllint .`);
 });
 run();
 

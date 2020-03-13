@@ -18,7 +18,7 @@ const installYamllint = async (): Promise<void> => {
 }
 
 const runYamllint = async (): Promise<void> => {
-  await exec.exec(`yamllint .`)
+  await exec.exec(`/opt/hostedtoolcache/Python/3.8.2/x64/bin/yamllint .`)
 }
 
 run()
