@@ -975,16 +975,23 @@ const exec = __importStar(__webpack_require__(986));
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            runYamllint();
+            const configPath = core.getInput('config_path');
+            let yamlCommand = '.';
+            if (configPath) {
+                yamlCommand += ` -c ${configPath}`;
+            }
+            runYamllint(yamlCommand)
+                .then()
+                .catch(err => core.setFailed(err.message));
         }
         catch (error) {
             core.setFailed(error.message);
         }
     });
 }
-const runYamllint = () => {
-    exec.exec(`yamllint .`);
-};
+const runYamllint = (yamlCommand) => __awaiter(void 0, void 0, void 0, function* () {
+    yield exec.exec(`yamllint ${yamlCommand}`);
+});
 run();
 
 
