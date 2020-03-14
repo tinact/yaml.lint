@@ -972,16 +972,14 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const core = __importStar(__webpack_require__(470));
 const exec = __importStar(__webpack_require__(986));
+const path = __importStar(__webpack_require__(622));
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const configPath = core.getInput('config_path');
-            let yamlCommand = '.';
-            if (configPath) {
-                yamlCommand += ` -c ${configPath}`;
-            }
-            runYamllint(yamlCommand)
-                .then()
+            const args = getArgs(configPath);
+            runYamllint(args)
+                .then(() => core.info(`Successfully YAML Lint.`))
                 .catch(err => core.setFailed(err.message));
         }
         catch (error) {
@@ -989,8 +987,24 @@ function run() {
         }
     });
 }
-const runYamllint = (yamlCommand) => __awaiter(void 0, void 0, void 0, function* () {
-    yield exec.exec(`yamllint ${yamlCommand}`);
+function getArgs(configPath) {
+    let args = ['-m', 'yamllint', '.'];
+    if (configPath) {
+        args = args.concat('-c', configPath);
+    }
+    return args;
+}
+function getPython() {
+    const envLocation = process.env.pythonLocation;
+    if (envLocation) {
+        return path.join(envLocation, 'python');
+    }
+    else {
+        throw new Error('Python could not be found');
+    }
+}
+const runYamllint = (args) => __awaiter(void 0, void 0, void 0, function* () {
+    yield exec.exec(getPython(), args);
 });
 run();
 

@@ -24,7 +24,8 @@
   "homepage": "https://github.com/tinact/action.yaml.lint#readme",
   "dependencies": {
     "@actions/core": "^1.2.3",
-    "@actions/exec": "^1.0.3"
+    "@actions/exec": "^1.0.3",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "@types/jest": "^25.1.3",
