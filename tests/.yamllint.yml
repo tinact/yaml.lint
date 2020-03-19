@@ -4,3 +4,4 @@ extends: default
 
 ignore: |
   .github
+  .git
