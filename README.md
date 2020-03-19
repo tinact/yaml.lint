@@ -17,6 +17,10 @@ Use a custom lint configuration.
     config_path: tests/.yamllint.yml
 ```
 
+## Sponsor
+
+- [ITIGO AG](https://itigo.ch)
+
 ## License
 
 This project is under the MIT License. See the [LICENSE](licence) file for the full license text.
