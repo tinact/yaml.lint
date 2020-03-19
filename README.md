@@ -1,4 +1,4 @@
-# Action: YAML Lint
+# Action: YAMLLint
 
 This action will lint YAML files.
 
@@ -11,7 +11,7 @@ Use a custom lint configuration.
 ## Example Usage
 
 ```yaml
-- name: YAML Lint
+- name: YAMLLint
   uses: tinact/yaml.lint@master
   with:
     config_path: tests/.yamllint.yml

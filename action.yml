@@ -1,5 +1,5 @@
 ---
-name: 'YAML Lint'
+name: 'YAMLLint'
 description: 'This action will lint YAML files.'
 author: 'Simon Baerlocher <s.baerlocher@sbaerlocher.ch>'
 inputs:
@@ -11,4 +11,4 @@ runs:
   main: 'dist/index.js'
 branding:
   color: blue
-  icon: check-square'
+  icon: check-square
